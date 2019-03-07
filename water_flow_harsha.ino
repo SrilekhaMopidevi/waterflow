@@ -185,11 +185,11 @@ void WEB_PAGE(void){
   localclient.println("</style>");
   localclient.print("<h1><b>VOLUME OF WATER FLOWING </b></h1>");
   localclient.println("<br><br><br>");
-  localclient.print("VOLUME :");
+  localclient.print("<h3>VOLUME :</h3>");
   localclient.print(totalMilliLitres);
   localclient.println("ml");
-//  localclient.println("FLOW RATE :");
-//  localclient.print(flowRate);
-//  localclient.println("L/min");
-//  localclient.println("</html>");
+  localclient.println("<h3>FLOW RATE :</h3>");
+  localclient.print(flowRate);
+  localclient.println("L/min");
+  localclient.println("</html>");
 }
