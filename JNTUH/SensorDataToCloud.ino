@@ -332,6 +332,20 @@ void WEB_PAGE(void){
   localclient.print("<h3>VOLUME 4:</h3>");
   localclient.print(totalMilliLitres_4);
   localclient.println("ml");
+
+  if(leak_1_flag){
+    localclient.print("Water Leak in Pipe 1");
+  }
+  else{
+    localclient.print("No Water Leak in Pipe 1");
+  }
+
+  if(leak_2_flag){
+    localclient.print("Water Leak in Pipe 2");
+  }
+  else{
+    localclient.print("No Water Leak in Pipe 2");
+  }
   
   localclient.println("</html>");
 }
