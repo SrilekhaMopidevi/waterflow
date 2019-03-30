@@ -81,9 +81,6 @@ void setup() {
   digitalWrite(FlowSensor_3, HIGH);
   pinMode(FlowSensor_4, INPUT);
   digitalWrite(FlowSensor_4, HIGH);
-
-  CONNECT_TO_WIFI();
-  server.begin();   
   
   attachInterrupt(digitalPinToInterrupt(FlowSensor_1), pulseCounter_1, CHANGE);
   attachInterrupt(digitalPinToInterrupt(FlowSensor_2), pulseCounter_2, CHANGE);
@@ -337,18 +334,19 @@ void WEB_PAGE(void){
   localclient.println("ml");
 
   if(leak_1_flag){
-    localclient.print("Water Leak in Pipe 1");
+    localclient.println("<a href=\"/LeakP1\"\"><h1><b>LEAKAGE IN PIPE1</h1></a>");
   }
   else{
-    localclient.print("No Water Leak in Pipe 1");
+    localclient.print("<a href=\"/LeakP1\"\"><h1><b>NO LEAKAGE</h1></a>");
   }
 
   if(leak_2_flag){
-    localclient.print("Water Leak in Pipe 2");
+    localclient.print("<a href=\"/LeakP1\"\"><h1><b>LEAKAGE IN PIPE1</h1></a>");
   }
   else{
-    localclient.print("No Water Leak in Pipe 2");
+    localclient.print("<a href=\"/LeakP1\"\"><h1><b>NO LEAKAGE</h1></a>");
   }
   
   localclient.println("</html>");
 }
+
