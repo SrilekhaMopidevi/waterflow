@@ -9,8 +9,8 @@ void CONNECT_TO_WIFI(void);
 void WEB_PAGE(void);
 void DATA_TO_CLOUD(void);
 
-const char* ssid = "SRI_Device";  
-const char* password = "Welcome12#";  
+const char* ssid = "Startrek";  
+const char* password = "Face fade12#";  
 unsigned long myChannelNumber = 720210;  
 String myWriteAPIKey = "8AC9AK250X9W8P7R";  
 const char * myReadAPIKey  = "AMKDM81DYZBJ8CX8";
@@ -81,6 +81,9 @@ void setup() {
   digitalWrite(FlowSensor_3, HIGH);
   pinMode(FlowSensor_4, INPUT);
   digitalWrite(FlowSensor_4, HIGH);
+
+  CONNECT_TO_WIFI();
+  server.begin();   
   
   attachInterrupt(digitalPinToInterrupt(FlowSensor_1), pulseCounter_1, CHANGE);
   attachInterrupt(digitalPinToInterrupt(FlowSensor_2), pulseCounter_2, CHANGE);
